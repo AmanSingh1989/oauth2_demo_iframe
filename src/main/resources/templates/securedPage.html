@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Secured Page</title>
+</head>
+<body>
+<h1>Secured Page</h1>
+<strong> Username: <span sec:authentication="email"></span> </strong>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Claim</th>
+    <th>Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="item : ${details}">
+    <td th:text="${item.key}">Key</td>
+    <td th:id="${'claim-' + item.key}" th:text="${item.value}">Value</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
