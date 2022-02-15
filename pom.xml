@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>oauth2_demo</artifactId>
+	<artifactId>oauth2_demo_iframe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>oauth2_demo</name>
-	<description>oauth2_demo</description>
+	<name>oauth2_demo_iframe</name>
+	<description>oauth2_demo_iframe</description>
 	<packaging>war</packaging>
 	<properties>
 		<java.version>1.8</java.version>

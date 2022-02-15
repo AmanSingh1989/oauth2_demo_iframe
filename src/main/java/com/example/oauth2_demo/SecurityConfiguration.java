@@ -8,6 +8,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        http
+                .headers().xssProtection()
+                .and()
+                .contentSecurityPolicy("frame-ancestors 'self' http://localhost:8080/");
+
         http.authorizeRequests()
                 // allow antonymous access to the root page
                 .antMatchers("/").permitAll()
@@ -20,4 +25,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 // enable OAuth2/OIDC
                 .and().oauth2Client()
                 .and().oauth2Login();
-}}
+    }
+}
